@@ -16,5 +16,6 @@ jobs:
         # GITHUB_REPOSITORY: ${{ github.repository }}
         PUBLISH_TO_BRANCH: gh-pages
         BASE_URL: https://uprootx.github.io/cat-show/
+        MARP_USER: root:root
       uses: ralexander-phi/marp-action@master
       
