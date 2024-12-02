@@ -3,6 +3,7 @@ marp: true
 theme: gaia
 _class: lead
 paginate: true
+headingDivider: 2 
 backgroundColor: #f4edda
 color: #366335
 ---
