@@ -4,7 +4,6 @@ theme: gaia
 _class: lead
 paginate: true
 backgroundColor: #f4edda
-backgroundSize: contain
 color: #366335
 ---
 
