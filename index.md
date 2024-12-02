@@ -3,8 +3,9 @@ marp: true
 theme: gaia
 _class: lead
 paginate: true
-headingDivider: 2 
 backgroundColor: #f4edda
+# backgroundImage: linear-gradient(rgba(0 0 0 / 50%),rgba(0 0 0 / 50%)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/OSG_Logo.svg/1280px-OSG_Logo.svg.png')
+backgroundSize: contain
 color: #366335
 ---
 
