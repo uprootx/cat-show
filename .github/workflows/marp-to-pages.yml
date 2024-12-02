@@ -1,24 +1,3 @@
-# name: CI
-
-# on:
-#   push:
-#     branches: [ main ]
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     steps:
-#     - uses: actions/checkout@v2
-#     - name: Build & Deploy to GitHub Pages
-#       env: 
-#         MARP_ARGS: "index.md -o index.html"
-#         # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#         # GITHUB_REPOSITORY: ${{ github.repository }}
-#         PUBLISH_TO_BRANCH: gh-pages
-#         BASE_URL: https://uprootx.github.io/cat-show/
-#         MARP_USER: root:root
-#       uses: ralexander-phi/marp-action@master
-      
 name: marp-to-pages
 concurrency: marp-to-pages
 
@@ -48,24 +27,24 @@ jobs:
       - name: Copy images directory (if exists)
         run: if [[ -d img ]]; then cp -R img build/img; fi
 
-      - name: Marp Build
+      - name: Marp Build (README)
         uses: docker://marpteam/marp-cli:v3.0.2
         with:
-          args: index.md -o build/index.html
+          args: README.md -o build/index.html
         env:
           MARP_USER: root:root
 
-      - name: Marp Build (index.pdf)
+      - name: Marp Build (README.pdf)
         uses: docker://marpteam/marp-cli:v3.0.2
         with:
-          args: index.md --allow-local-files -o build/index.pdf
+          args: README.md --allow-local-files -o build/README.pdf
         env:
           MARP_USER: root:root
 
-      - name: Marp Build (index.pptx)
+      - name: Marp Build (README.pptx)
         uses: docker://marpteam/marp-cli:v3.0.2
         with:
-          args: index.md --allow-local-files -o build/index.pptx
+          args: README.md --allow-local-files -o build/README.pptx
         env:
           MARP_USER: root:root
 
@@ -96,3 +75,4 @@ jobs:
           branch: gh-pages
           folder: ./build/
           clean-exclude: pr-preview/
+
